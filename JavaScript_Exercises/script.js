@@ -133,13 +133,156 @@ swaps(a,b);
 
     // --------------------------Q8---------------------
 
-    function removeChar(world,indexs){
+    function removeChar(str,indexs){
+
+        part1 = str.substring(0, indexs);
+        part2 = str.substring(indexs + 1, str.length);
+       console.log(part1+part2)
+
         // var re=world.replace(world.indexOf(world.charAt(world.indexOf())),"");
 
-        // var re=world.replace(world.charAt(world.indexOf(indexs)),"");
-        var charValue=world.charAt(indexs);
-        var indx=charValue.replace(charValue,"a");
-        console.log(indx);
+        // var charValue=world.charAt(indexs);
+        // // var indx=charValue.replace(charValue,"a");
+        // console.log(charValue);
+    //     var ind=indexs;
+    //    var resultss = world.slice(ind, ind);
+    //    console.log(resultss);
     }
 
-    removeChar("Hello",1);
+    removeChar("Orange",3);
+
+
+  // --------------------------Q9---------------------
+
+        function merges(val1,val2){
+            let part1 = val1+"";
+            let part2 = val2+"";
+         
+            console.log(part1.substring(1, part1.length)+part2.substring(1, part2.length));
+        }
+        merges("lora","inge");
+
+
+        
+  // --------------------------Q10---------------------
+  function specificChar(char,str){
+    
+    var firstChar=str.slice(0,1);
+    var lastChar=str.slice(str.length-1,str.length);
+    if(firstChar==char || lastChar==char)
+    return true;
+    else
+    return false
+
+  }
+  console.log("orange is "+specificChar("o","orange"));
+  console.log("orange is "+specificChar("n","orangez"));
+
+
+    // --------------------------Q11---------------------
+    function convertArray(str){
+    
+        var arr=str.split(" ");
+        console.log(arr);
+      }
+      convertArray("Coding Academy by Orange")
+
+  // --------------------------Q12---------------------
+    function sortAlpha(str){
+    var arrChar=str.split("").sort().join('');
+
+        // for(var i=0;i<str.length;i++){
+        //     arrChar[i]=str.slice(i,i+1);
+        // }
+
+        // var y=arrChar[x];
+        // for(var x=0;x<arrChar.length;x++){
+        //     if(arrChar[x]>arrChar[x+1]){
+        //     arrChar[x]=arrChar[x+1];
+        //     arrChar[x+1]=y;}
+        // }
+        console.log(arrChar);
+
+    }
+
+    sortAlpha("orange");
+
+
+    // ------------------------------------------ Object --------------------------
+
+      // --------------------------Q1---------------------
+    function objToArray(obj){
+        console.log(Object.keys(obj));
+    }
+
+    var object = { 70: 'x', 21: 'y', 35: 'z' };
+    objToArray(object);
+
+
+     // --------------------------Q2---------------------
+     function countProperties(obj) {
+        return Object.keys(obj).length;
+      }
+
+      const obj = {a: 1, b: 2, c: 3};
+console.log(countProperties(obj)); // Output: 3
+
+
+ // --------------------------Q3---------------------
+
+ function mergeObjects(obj1, obj2) {
+    return Object.assign({}, obj1, obj2);
+  }
+
+  const obj1 = {a: 1, b: 2};
+const obj2 = {c: 3, d: 4};
+const mergedObj = mergeObjects(obj1, obj2);
+console.log(mergedObj); 
+
+
+ // --------------------------Q4---------------------
+
+ function convertObjectToUppercase(obj) {
+    const newObj = {};
+    for (const property in obj) {
+      newObj[property.toUpperCase()] = obj[property];
+    }
+    return newObj;
+  }
+
+
+  const objs = {name: 'John', age: 30, city: 'New York'};
+const newObj = convertObjectToUppercase(objs);
+console.log(newObj);
+
+ // --------------------------Q5---------------------
+
+function removeNullProperties(obj) {
+    const newObj = {};
+    for (const property in obj) {
+      if (obj[property] !== null) {
+        newObj[property] = obj[property];
+      }
+    }
+    return newObj;
+  }
+
+
+  const objss = {name: 'John', age: null, city: 'New York', occupation: null};
+const newObjs = removeNullProperties(objss);
+console.log(newObjs); 
+
+
+
+
+ // --------------------------Q6---------------------
+
+function sortObjectPropertiesAlphabetically(obj) {
+    const propertyNames = Object.keys(obj).sort();
+    return propertyNames;
+  }
+
+
+const obja = {name: 'John', age: 30, city: 'New York'};
+const sortedProperties = sortObjectPropertiesAlphabetically(obja);
+console.log(sortedProperties);
